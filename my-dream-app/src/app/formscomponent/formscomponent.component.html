@@ -1,0 +1,17 @@
+<p>
+  formscomponent works!
+  <label>
+    Name:
+    <input type="text" [formControl]="name">
+  </label>
+</p>
+
+<p>
+  Value: {{ name.value }}
+</p>
+
+<p>
+  <button (click)="updateName()">Update Name</button>
+</p>
+
+<app-profile-editor></app-profile-editor>

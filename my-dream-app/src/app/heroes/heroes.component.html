@@ -1,0 +1,34 @@
+<h2>{{singlehero.name}} Details</h2>
+<div><span>id: </span>{{singlehero.id}}</div>
+<div><span>name: </span>{{singlehero.name}}</div>
+
+<h2>{{singlehero.name | uppercase}} Details</h2>
+
+<div>
+  <label>name:
+    <input [(ngModel)]="singlehero.name" placeholder="name">
+  </label>
+</div>
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let onehero of listHeroes" [class.selected]="onehero === selectedHero">
+    <a  routerLink="/details/{{onehero.id}}">
+    <span class="badge">{{onehero.id}}</span> {{onehero.name}}
+  </a>
+  </li>
+</ul>
+<div *ngIf="selectedHero">
+<h2>{{selectedHero.name | uppercase}} Details</h2>
+<div><span>id: </span>{{selectedHero.id}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="selectedHero.name" placeholder="name">
+  </label>
+</div>
+</div>
+
+<!--app-hero-detail [optedhero]="selectedHero"></app-hero-detail>-->
+
+
+
